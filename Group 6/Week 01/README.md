@@ -22,6 +22,139 @@
 - **Полиморфизъм**
   - представлява свойството на обектите от един и същи тип да имат един и същи интерфейс, но с различна реализация на този интерфейс.
 
+
+## [Енумерации (Enums)](https://en.cppreference.com/w/cpp/language/enum)
+
+Eнумерацията е отделен тип, чиято стойност е ограничена до диапазон от стойности, който може да включва няколко изрично посочени константи(енумератори). Стойностите на константите са стойности от интегрален тип, известен като основен тип на eнумерацията Eнумерацията има същия размер, представяне на стойност и изисквания за подравняване като неговия основен тип. Освен това всяка стойност на енумерацията има същото представяне като съответната стойност на основния тип. <br />
+
+```c++
+enum <name> {
+	<element>, //0
+	<element>, //1
+	.
+	.
+	.
+};
+
+enum IceCream1 {
+	vanilla, //0
+	chocolate, //1
+	strawberry, //2
+	mango, //3
+	oreo //4
+};
+
+enum IceCream2 : char {
+	vanilla, //0
+	chocolate, //1
+	strawberry, //2
+	mango, //3
+	oreo //4
+};
+
+int main() {
+	std::cout << sizeof(IceCream1) << std::endl; // 4
+	std::cout << sizeof(IceCream2) << std::endl; // 1
+}
+
+```
+
+### Unscoped enumеrations (plain enums) vs Scoped enumеrations (enum class | struct)
+
+```c++
+enum class Color { red, green, blue }; // enum class
+enum Animal { dog, cat, bird, human }; // plain enum
+```
+
+- enum classes
+  - енумераторите са локални за enuma и техните стойности не се преобразуват имплицитно към други типове (another enum or int).
+- Plain enums
+  - енумераторите са в същия scope като enuma и техните стойности се преобразуват имплицитно към integers и други типове (включително да други enum-и ).
+
+```c++
+enum Color { red, green, blue };                    // plain enum
+enum Card { red_card, green_card, yellow_card };    // another plain enum
+enum class Animal { dog, deer, cat, bird, human };  // enum class
+enum class Mammal { kangaroo, deer, human };        // another enum class
+
+void fun() {
+    // examples of bad use of plain enums:
+    Color color = Color::red;
+    Card card = Card::green_card;
+
+    int num = color;    // no problem
+
+    if (color == Card::red_card) // no problem (bad)
+        cout << "bad" << endl;
+
+    if (card == Color::green)   // no problem (bad)
+        cout << "bad" << endl;
+
+    // examples of good use of enum classes (safe)
+    Animal a = Animal::deer;
+    Mammal m = Mammal::deer;
+
+    int num2 = a;   // error
+    if (m == a)     // error (good)
+        cout << "bad" << endl;
+
+    if (a == Mammal::deer) // error (good)
+        cout << "bad" << endl;
+}
+```
+
+Извод: Винаги използвайте enum (class | struct), за да избегнете имплицитното преобразуване и двусмислици.
+
+## [Namespaces](https://en.cppreference.com/w/cpp/language/namespace)
+
+Пространствата от имена предоставят метод за предотвратяване на конфликти с имена. <br />
+Символите, декларирани вътре в namespace block, се поставят в наименуван scope, който не позволява да бъдат сбъркани със символи с идентични имена в други диапазони. <br />
+
+```c++
+namespace A {
+    int i;
+}
+
+namespace B {
+    int i;
+    int j;
+
+    namespace C {
+        namespace D {
+            using namespace A; // all names from A injected into global namespace
+
+            int j;
+            int k;
+            int a = i;         // i is B::i, because A::i is hidden by B::i
+        }
+
+        using namespace D; // names from D are injected into C
+                           // names from A are injected into global namespace
+
+        int k = 89; // OK to declare name identical to one introduced by a using
+        int l = k;  // ambiguous: C::k or D::k
+        int m = i;  // ok: B::i hides A::i
+        int n = j;  // ok: D::j hides B::j
+    }
+}
+
+namespace Q {
+    namespace V   	// V is a member of Q, and is fully defined within Q
+    { 			 	// namespace Q::V // C++17 alternative to the lines above
+        class C		// C is a member of V and is fully defined within V
+	{
+		void m(); // C::m is only declared
+	};
+        void f(); // f is a member of V, but is only declared here
+    }
+
+    void V::C::m() // definition of V::C::m outside of the namespace (and the class body)
+    {}             // enclosing namespaces are the global namespace, Q, and Q::V
+}
+```
+
+---
+
 ## [**Структури**](https://en.cppreference.com/w/c/language/struct)
 
 Структурите в C++ се използват за групиране на елементи. Елементите, наричани още членове, могат да бъдат от различен тип(int, int[], bool и т.н.) и с различна големина.
@@ -333,136 +466,6 @@ int main() {
 
 ![Union](https://miro.medium.com/v2/resize:fit:1200/1*edHeoRBfPgxcXHp2zIkP-A.jpeg)
 
-## [Енумерации (Enums)](https://en.cppreference.com/w/cpp/language/enum)
 
-Eнумерацията е отделен тип, чиято стойност е ограничена до диапазон от стойности, който може да включва няколко изрично посочени константи(енумератори). Стойностите на константите са стойности от интегрален тип, известен като основен тип на eнумерацията Eнумерацията има същия размер, представяне на стойност и изисквания за подравняване като неговия основен тип. Освен това всяка стойност на енумерацията има същото представяне като съответната стойност на основния тип. <br />
-
-```c++
-enum <name> {
-	<element>, //0
-	<element>, //1
-	.
-	.
-	.
-};
-
-enum IceCream1 {
-	vanilla, //0
-	chocolate, //1
-	strawberry, //2
-	mango, //3
-	oreo //4
-};
-
-enum IceCream2 : char {
-	vanilla, //0
-	chocolate, //1
-	strawberry, //2
-	mango, //3
-	oreo //4
-};
-
-int main() {
-	std::cout << sizeof(IceCream1) << std::endl; // 4
-	std::cout << sizeof(IceCream2) << std::endl; // 1
-}
-
-```
-
-### Unscoped enumеrations (plain enums) vs Scoped enumеrations (enum class | struct)
-
-```c++
-enum class Color { red, green, blue }; // enum class
-enum Animal { dog, cat, bird, human }; // plain enum
-```
-
-- enum classes
-  - енумераторите са локални за enuma и техните стойности не се преобразуват имплицитно към други типове (another enum or int).
-- Plain enums
-  - енумераторите са в същия scope като enuma и техните стойности се преобразуват имплицитно към integers и други типове (включително да други enum-и ).
-
-```c++
-enum Color { red, green, blue };                    // plain enum
-enum Card { red_card, green_card, yellow_card };    // another plain enum
-enum class Animal { dog, deer, cat, bird, human };  // enum class
-enum class Mammal { kangaroo, deer, human };        // another enum class
-
-void fun() {
-    // examples of bad use of plain enums:
-    Color color = Color::red;
-    Card card = Card::green_card;
-
-    int num = color;    // no problem
-
-    if (color == Card::red_card) // no problem (bad)
-        cout << "bad" << endl;
-
-    if (card == Color::green)   // no problem (bad)
-        cout << "bad" << endl;
-
-    // examples of good use of enum classes (safe)
-    Animal a = Animal::deer;
-    Mammal m = Mammal::deer;
-
-    int num2 = a;   // error
-    if (m == a)     // error (good)
-        cout << "bad" << endl;
-
-    if (a == Mammal::deer) // error (good)
-        cout << "bad" << endl;
-}
-```
-
-Извод: Винаги използвайте enum (class | struct), за да избегнете имплицитното преобразуване и двусмислици.
-
-## [Namespaces](https://en.cppreference.com/w/cpp/language/namespace)
-
-Пространствата от имена предоставят метод за предотвратяване на конфликти с имена. <br />
-Символите, декларирани вътре в namespace block, се поставят в наименуван scope, който не позволява да бъдат сбъркани със символи с идентични имена в други диапазони. <br />
-
-```c++
-namespace A {
-    int i;
-}
-
-namespace B {
-    int i;
-    int j;
-
-    namespace C {
-        namespace D {
-            using namespace A; // all names from A injected into global namespace
-
-            int j;
-            int k;
-            int a = i;         // i is B::i, because A::i is hidden by B::i
-        }
-
-        using namespace D; // names from D are injected into C
-                           // names from A are injected into global namespace
-
-        int k = 89; // OK to declare name identical to one introduced by a using
-        int l = k;  // ambiguous: C::k or D::k
-        int m = i;  // ok: B::i hides A::i
-        int n = j;  // ok: D::j hides B::j
-    }
-}
-
-namespace Q {
-    namespace V   	// V is a member of Q, and is fully defined within Q
-    { 			 	// namespace Q::V // C++17 alternative to the lines above
-        class C		// C is a member of V and is fully defined within V
-	{
-		void m(); // C::m is only declared
-	};
-        void f(); // f is a member of V, but is only declared here
-    }
-
-    void V::C::m() // definition of V::C::m outside of the namespace (and the class body)
-    {}             // enclosing namespaces are the global namespace, Q, and Q::V
-}
-```
-
----
 
 _Credits: [Georgi Terziev](https://github.com/GeorgiTerziev02/)_
