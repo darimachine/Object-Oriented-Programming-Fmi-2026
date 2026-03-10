@@ -426,7 +426,7 @@ public:
     }
 
     double calculate(double a, const std::string& op, double b) {
-        if (operations.find(op) == operations.end()) {
+        if (operations.count(op) == 0) {
             std::cout << "Непозната операция: " << op << "\n";
             return 0;
         }
