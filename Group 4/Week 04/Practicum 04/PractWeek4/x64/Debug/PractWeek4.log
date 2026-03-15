@@ -1,0 +1,4 @@
+﻿  PractWeek4.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\print(11): warning STL4038: The contents of <print> are available only with C++23 or later.
+D:\Visual Sudio Projects\PractWeek4\PractWeek4.cpp(23,23): warning C4018: '<': signed/unsigned mismatch
+  PractWeek4.vcxproj -> D:\Visual Sudio Projects\PractWeek4\x64\Debug\PractWeek4.exe
