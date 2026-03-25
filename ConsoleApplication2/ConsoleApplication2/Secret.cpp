@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <cstring>
 
+#include <cstring>
 #include <iostream>
 #include <cstring>
 
@@ -47,7 +47,7 @@ public:
     }
 
     Secret& operator=(const Secret& other) {
-        if (this != &other) { 
+        if (this != &other) {
             free();
             copyFrom(other);
         }
@@ -64,14 +64,14 @@ public:
         }
         else {
             this->loginFails++;
-            return nullptr; 
+            return nullptr;
         }
     }
 
     bool setPassword(const char* newPassword, const char* oldPassword) {
         if (strcmp(this->password, oldPassword) == 0) {
-            delete[] this->password; 
-            this->password = new char[strlen(newPassword) + 1]; 
+            delete[] this->password;
+            this->password = new char[strlen(newPassword) + 1];
             strcpy(this->password, newPassword);
             return true;
         }
@@ -83,8 +83,8 @@ public:
 
     bool setTask(const char* newTask, const char* passwd) {
         if (strcmp(this->password, passwd) == 0) {
-            delete[] this->task; 
-            this->task = new char[strlen(newTask) + 1]; 
+            delete[] this->task;
+            this->task = new char[strlen(newTask) + 1];
             strcpy(this->task, newTask);
             return true;
         }

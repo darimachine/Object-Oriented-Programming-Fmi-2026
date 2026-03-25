@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
 #include <fstream>
 #include <cstring>
 #include <cstdlib>
@@ -34,8 +36,8 @@ Flavor stringToFlavor(const char* str) {
     if (strcmp(str, "Mango") == 0 || strcmp(str, "mango") == 0) return Flavor::MANGO;
     if (strcmp(str, "Mint") == 0 || strcmp(str, "mint") == 0) return Flavor::MINT;
     if (strcmp(str, "Apple") == 0 || strcmp(str, "apple") == 0) return Flavor::APPLE;
-    return Flavor::BLUEBERRY; 
-
+    return Flavor::BLUEBERRY;
+}
 class Baloon {
 private:
     double price;

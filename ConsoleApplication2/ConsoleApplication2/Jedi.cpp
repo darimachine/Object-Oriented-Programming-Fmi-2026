@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <cstring>
 #include <fstream>
@@ -243,7 +245,7 @@ public:
 		JediCollection tempCollection;
 		std::ifstream file(fileName);
 		if (!file.is_open()) {
-			return;
+			return JediCollection();
 		}
 
 		tempCollection = readFromTxt(file);
@@ -301,7 +303,7 @@ public:
 		JediCollection tempCollection;
 		std::ifstream file(fileName, std::ios::binary);
 		if (!file.is_open()) {
-			return;
+			return JediCollection();
 		}
 
 		tempCollection = readFromBinary(file);
