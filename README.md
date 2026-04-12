@@ -1,19 +1,19 @@
 # Обектно-ориентирано програмиране 2026
 
-_Материали от семинари и практикуми на група 6 4 2 1, **СИ**
+_Материали от семинари и практикуми на група 6 4 2 1, **СИ_**
 
-## 📖 Учебен план
+## 📖 Учебен план на 6-та група
 
 | Седмица                                                                                                 | Теми                                                                                                                                                                                                   |
 | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **[01]()** | ............                                        |
-| **[02]()** | ............                                                                                                                        |
-| **[03]()** | ............                                                                                                                                                                                         |
-| **[04]()** | ............                    |
-| **[05]()** | ............                                                                                                  |
-| **[06]()** | ............                                                                                                                                        |
-| **[07]()** | ............                                                                                                                                   |
-| **[08]()** | ............                                                                                     |
+| **[01](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2001)** | Преговор на УП. Увод в ООП. Енумерации, пространства от имена. Структури                                   |
+| **[02](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2002/Seminar%2002)** |Структури, Извикване на функции, от функции приемащи обекти. Подравняване на структура. N Triangles. Указател this. Жизнен цикъл на обект. Конструктори std::print и std::format                                                                                                                        |
+| **[03](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2003/Seminar%2003)** | Конструктор и деструктор. Капсулация. Модификатори за достъп. Член-функции get и set, mutable                                                                                                                                                                                         |
+| **[04](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2004/Seminar%2004)** | Разделна компилация. Композиция и агрегация. Ламбда Функции - `std::function` (Задача (Live Code)  **ConsolePrinter**) Копиращ конструктор. Оператор за присвояване (operator=).                     |
+| **[05](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2005/Seminar%2005)** | Копиращ конструктор, Оператор= Продължение, RVO & NRVO, Динамична Памет в класове - **Голямата Четворка** (Задача (**Live Code**) `Студенти`)                                                                                                 |
+| **[06](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2006/Seminar%2006)** | Предефиниране на оператори. Приятелски класове и функции. Defaulted comparison operators и <=> (C++20). Ключова дума `auto` Задача (Live Code): **NVector**                                                                                                                                |
+| **[07](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2007/Seminar%2007)** | Продължение Оператори. Ключова дума static. Статични функции и променливи. Статични член-данни и член-функции. Live code: `SelfCounting`. Дизайн Патърни - (Live Code `Singleton`).                                                                                                                                |
+| **[08](https://github.com/darimachine/Object-Oriented-Programming-Fmi-2026/tree/main/Group%206/Week%2008/Seminar%2008)** | Масиви от указатели към обекти vs Масив от обекти, Move семантики ползи, lvalue, rvalue, move конструктор/оператор=, , std::move. `Rule of Five` Live Code: Клас `MyString`                                                                                         |
 | **[09]()** | ............                                                                                                        |
 | **[10]()** | ............                                                                                                                                                                                          |
 | **[11]()** | ............                                                              |
