@@ -18,24 +18,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9539c8a4-22da-4076-9cd0-a467685210b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/myTasks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/.idea/2ndHomeword.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Company.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Company.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Department.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Department.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Employee.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/Employee.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/ErrorCode.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2ndHomeword/Registration.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2ndHomeword/Registration.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2ndHomeword/Vehicle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2ndHomeword/Vehicle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2ndHomeword/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2ndHomeword/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2ndHomeword/Company.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/Company.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

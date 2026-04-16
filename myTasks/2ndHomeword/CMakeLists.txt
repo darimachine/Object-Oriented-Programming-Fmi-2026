@@ -12,4 +12,8 @@ add_executable(CompanyTask
         Employee.cpp
         Employee.h
         ErrorCode.h
+        Registration.cpp
+        Registration.h
+        Vehicle.cpp
+        Vehicle.h
 )

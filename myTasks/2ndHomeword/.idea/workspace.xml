@@ -29,24 +29,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="189d855b-cd83-4c79-ab9e-aad752ac9eee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/myTasks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/2ndHomeword.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Company.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Company.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Department.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Department.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Employee.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Employee.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ErrorCode.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Registration.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Registration.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vehicle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vehicle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Company.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Company.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +126,7 @@
       <workItem from="1776344474675" duration="597000" />
       <workItem from="1776364653673" duration="48000" />
       <workItem from="1776364881396" duration="119000" />
-      <workItem from="1776365012241" duration="4140000" />
+      <workItem from="1776365012241" duration="9047000" />
     </task>
     <servers />
   </component>

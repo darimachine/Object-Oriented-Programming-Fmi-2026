@@ -129,31 +129,31 @@ Department *Company::operator[](const char *DepName)
 }
 
 
-int main()
-{
-    Employee e1("Иван Иванов",   "Разработчик", 3000.0);
-    Employee e2("Мария Петрова", "Дизайнер",    2500.0);
-    Employee e3("Петър Георгиев","Мениджър",    4000.0);
-
-    std::cout << e1 << "\n";
-
-    ++e1;
-    std::cout << e1.getSalary() << "\n";
-
-    std::cout << (e1 > e2 ? "e1 е по-добре платен" : "e2 е по-добре платен") << "\n";
-
-    Company& company = Company::getInstance();
-
-    company.addDepartment("Engineering");
-    company.addDepartment("Design");
-
-    company.addEmployeeToDepartment("Engineering", e1);
-    company.addEmployeeToDepartment("Engineering", e2);
-    company.addEmployeeToDepartment("Design",      e3);
-
-    std::cout << company << "\n";
-
-
-
-    return 0;
-}
+// int main()
+// {
+//     Employee e1("Иван Иванов",   "Разработчик", 3000.0);
+//     Employee e2("Мария Петрова", "Дизайнер",    2500.0);
+//     Employee e3("Петър Георгиев","Мениджър",    4000.0);
+//
+//     std::cout << e1 << "\n";
+//
+//     ++e1;
+//     std::cout << e1.getSalary() << "\n";
+//
+//     std::cout << (e1 > e2 ? "e1 е по-добре платен" : "e2 е по-добре платен") << "\n";
+//
+//     Company& company = Company::getInstance();
+//
+//     company.addDepartment("Engineering");
+//     company.addDepartment("Design");
+//
+//     company.addEmployeeToDepartment("Engineering", e1);
+//     company.addEmployeeToDepartment("Engineering", e2);
+//     company.addEmployeeToDepartment("Design",      e3);
+//
+//     std::cout << company << "\n";
+//
+//
+//
+//     return 0;
+// }
