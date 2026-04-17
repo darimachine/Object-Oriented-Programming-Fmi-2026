@@ -9,6 +9,9 @@ class VehicleList
         size_t vechileCount;
 
         void resize(size_t);
+        void copyFrom(const VehicleList&);
+        void moveFrom(VehicleList&&) noexcept;
+        void free();
 
     public:
        explicit VehicleList(size_t);
@@ -25,6 +28,14 @@ class VehicleList
         int getCapacity() const;
         int getSize() const;
         Vehicle * find(const Registration&) const;
+
+        ~VehicleList();
+    
+        VehicleList(const VehicleList&);
+        VehicleList& operator=(const VehicleList&);
+
+        VehicleList(VehicleList&&);
+        VehicleList& operator=(VehicleList&&);
 };
 
 

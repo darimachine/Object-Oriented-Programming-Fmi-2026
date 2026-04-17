@@ -223,6 +223,82 @@ Vehicle *VehicleList::find(const Registration &searchingRegNum) const
     return nullptr;
 }
 
+void VehicleList::free()
+{
+    for (int i =0; i < capacity; i++)
+    {
+        if (vechileLists[i] != nullptr)
+        {
+            delete vechileLists[i];
+            vechileLists[i] = nullptr;
+        }
+    }
+    delete [] vechileLists;
+    vechileLists = nullptr;
+}
+
+void VehicleList::copyFrom(const VehicleList &other)
+{
+    capacity = other.capacity;
+    vechileCount = other.vechileCount;
+
+    vechileLists = new Vehicle*[capacity]{nullptr};
+    for (int i =0; i < capacity; i++)
+    {
+        if (other.vechileLists[i] != nullptr)
+        {
+            vechileLists[i] = new Vehicle (*(other.vechileLists[i]));
+        }
+    }
+}
+
+void VehicleList::moveFrom(VehicleList &&other) noexcept
+{
+    capacity = other.capacity;
+    vechileCount = other.vechileCount;
+    other.capacity = 0;
+    other.vechileCount = 0;
+
+    vechileLists = other.vechileLists;
+    other.vechileLists = nullptr;
+
+}
+
+VehicleList::~VehicleList()
+{
+    free();
+}
+
+VehicleList &VehicleList::operator=(const VehicleList &other)
+{
+    if (this != &other)
+    {
+        free();
+        copyFrom(other);
+    }
+    return  *this;
+}
+
+VehicleList::VehicleList(const VehicleList &other)
+{
+    copyFrom(other);
+}
+
+VehicleList &VehicleList::operator=(VehicleList &&other)
+{
+    if (this != &other)
+    {
+        free();
+        moveFrom(std::move(other));
+    }
+    return *this;
+}
+
+VehicleList::VehicleList(VehicleList &&other)
+{
+    moveFrom(std::move(other));
+}
+
 int main()
 {
 

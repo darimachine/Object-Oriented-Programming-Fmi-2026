@@ -18,15 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9539c8a4-22da-4076-9cd0-a467685210b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/VehicleList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2ndHomeword/VehicleList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2ndHomeword/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2ndHomeword/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2ndHomeword/Registration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/Registration.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2ndHomeword/Registration.h" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/Registration.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2ndHomeword/Vehicle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/Vehicle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2ndHomeword/Vehicle.h" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/Vehicle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2ndHomeword/VehicleList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/VehicleList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2ndHomeword/VehicleList.h" beforeDir="false" afterPath="$PROJECT_DIR$/2ndHomeword/VehicleList.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
