@@ -30,7 +30,7 @@ class VehicleList
         Vehicle * find(const Registration&) const;
 
         ~VehicleList();
-    
+
         VehicleList(const VehicleList&);
         VehicleList& operator=(const VehicleList&);
 

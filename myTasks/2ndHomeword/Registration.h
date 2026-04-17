@@ -1,6 +1,7 @@
 #pragma once
 #include  <compare>
 
+const  char* DR = "DEFAULT REGISTRATION";
 constexpr  int PLACE_MAX_LEN = 2;
 constexpr  int INTEGERS_LEN = 4;
 constexpr int SYMBOLS_LEN = 2;
@@ -21,6 +22,7 @@ class Registration
         Registration() = delete;
         Registration(const char*);
         const char* getRegNumb() const;
+        void setRegNum(const char*);
 
         friend  std::ostream& operator<<(std::ostream&, const Registration&);
         std::strong_ordering operator<=>( const Registration&) const;

@@ -11,6 +11,10 @@ class Vehicle
     int productionYear;
     int horsePowers;
 
+    void free();
+    void moveFrom(Vehicle&&);
+    void copyFrom(const Vehicle&);
+
     public:
         Vehicle() = delete;
         Vehicle(const Registration&,const char*, int, int);
@@ -18,6 +22,10 @@ class Vehicle
         void setProdY(int);
         void setHorsePower(int);
         ~Vehicle();
+        Vehicle(const Vehicle&);
+        Vehicle& operator=(const Vehicle&);
+        Vehicle(Vehicle &&);
+        Vehicle& operator=(Vehicle&&);
 
         friend  std::ostream& operator<<(std::ostream&, const Vehicle&);
         friend bool operator==(const Vehicle&, const Vehicle&);

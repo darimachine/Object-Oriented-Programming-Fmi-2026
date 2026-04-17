@@ -59,10 +59,68 @@ std::strong_ordering Vehicle::operator<=>(const Vehicle& other) const
     return  horsePowers <=> other.horsePowers;
 }
 
-Vehicle::~Vehicle()
+
+void Vehicle::copyFrom(const Vehicle &other)
+{
+    productionYear = other.productionYear;
+    horsePowers = other.horsePowers;
+
+    description = new char[strlen(other.description) + 1];
+    strcpy(description, other.description);
+    regNum.setRegNum(DR);
+}
+
+void Vehicle::moveFrom(Vehicle &&other)
+{
+    productionYear = other.productionYear;
+    horsePowers = other.horsePowers;
+    description = other.description;
+    regNum = other.regNum;
+
+    other.productionYear =0;
+    other.horsePowers = 0;
+    other.description = nullptr;
+}
+
+Vehicle::Vehicle(const Vehicle &other)
+{
+    copyFrom(other);
+}
+
+Vehicle &Vehicle::operator=(const Vehicle &other)
+{
+    if (this != &other)
+    {
+        free();
+        copyFrom(other);
+    }
+    return *this;
+}
+
+Vehicle::Vehicle(Vehicle &&other)
+{
+    moveFrom(std::move(other));
+}
+
+Vehicle &Vehicle::operator=(Vehicle &&other)
+{
+    if (this != &other)
+    {
+        free();
+        moveFrom(std::move(other));
+    }
+    return *this;
+}
+
+void Vehicle::free()
 {
     delete [] description;
     description = nullptr;
+}
+
+Vehicle::~Vehicle()
+{
+    free();
 }
 
 const Registration &Vehicle::getRegistration() const
