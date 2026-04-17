@@ -89,6 +89,14 @@ std::strong_ordering Registration::operator<=>(const Registration& other) const
 
 }
 
+void Registration::setRegNum(const char *str)
+{
+    if (!str || strlen(str) > REG_NUM_MAX_LEN)
+    {
+        return;
+    }
+    strcpy(registrationNum, str);
+}
 
 int main()
 {
