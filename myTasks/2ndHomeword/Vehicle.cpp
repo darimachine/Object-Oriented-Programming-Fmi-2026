@@ -3,7 +3,7 @@
 
 void Vehicle::setDescription(const char *descr)
 {
-    if (!descr)
+    if (descr != nullptr)
     {
         size_t descrLen = strlen(descr);
         description = new char[descrLen + 1];
@@ -48,7 +48,7 @@ std::ostream& operator<<(std::ostream& os, const Vehicle& obj)
 }
 bool operator==(const Vehicle& lhs, const Vehicle& rhs)
 {
-    return lhs.productionYear == rhs.productionYear;
+    return (lhs.productionYear == rhs.productionYear) && (lhs.horsePowers == rhs.horsePowers);
 }
 std::strong_ordering Vehicle::operator<=>(const Vehicle& other) const
 {
@@ -59,10 +59,21 @@ std::strong_ordering Vehicle::operator<=>(const Vehicle& other) const
     return  horsePowers <=> other.horsePowers;
 }
 
-int main()
+Vehicle::~Vehicle()
 {
-
-
-
-    return 0;
+    delete [] description;
+    description = nullptr;
 }
+
+const Registration &Vehicle::getRegistration() const
+{
+    return regNum;
+}
+
+// int main()
+// {
+//
+//
+//
+//     return 0;
+// }

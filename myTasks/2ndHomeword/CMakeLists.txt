@@ -16,4 +16,6 @@ add_executable(CompanyTask
         Registration.h
         Vehicle.cpp
         Vehicle.h
+        VehicleList.cpp
+        VehicleList.h
 )

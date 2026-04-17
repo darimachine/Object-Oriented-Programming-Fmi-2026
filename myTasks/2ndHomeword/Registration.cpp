@@ -5,12 +5,12 @@
 constexpr  int REGS_PLACE_ONE_SYMB = 7;
 constexpr  int REGS_PLACE_TWO_SYMB = 8;
 
-bool Registration::isDigit(const char symb)
+bool Registration::isDigit(char symb) const
 {
     return symb >= '0' && symb <='9';
 }
 
-bool Registration::isLetter(const char symb)
+bool Registration::isLetter(char symb) const
 {
     return  symb >='A' && symb<='Z';
 }
@@ -88,6 +88,7 @@ std::strong_ordering Registration::operator<=>(const Registration& other) const
     return  result <=> 0;
 
 }
+
 
 int main()
 {
