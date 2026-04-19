@@ -1,20 +1,22 @@
 #pragma once
-#include <cstring>
 #include <ostream>
+#include <compare>
 #include "Utils.h"
 
 class Employee {
-	static int nextId;
+	static unsigned nextId;
 	unsigned id;
-	char name[128];
-	char position[128];
+	char name[MAX_NAME_LENGTH];
+	char position[MAX_POSITION_LENGTH];
 	double salary;
 
 public:
 	Employee();
 	Employee(const char* name, const char* position, double salary);
+	double getSalary() const;
 	ErrorCode updateSalary(double amount);
-	static int getNextId();
+	static unsigned getNextId();
+	unsigned getId() const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
 	std::strong_ordering operator<=>(const Employee& other) const;
