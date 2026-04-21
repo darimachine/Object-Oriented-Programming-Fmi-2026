@@ -3,6 +3,7 @@
 
 void Vehicle::setDescription(const char *descr)
 {
+    delete [] description;
     if (descr != nullptr)
     {
         size_t descrLen = strlen(descr);
@@ -19,6 +20,7 @@ void Vehicle::setHorsePower(int hp)
 {
     if (hp < MIN_HORSE_P)
     {
+        hp = MIN_HORSE_P;
         return;
     }
     horsePowers = hp;
@@ -28,12 +30,13 @@ void Vehicle::setProdY(int py)
 {
     if (py < MIN_PROD_Y)
     {
+        productionYear = MIN_PROD_Y;
         return;
     }
     productionYear = py;
 }
 
-Vehicle::Vehicle(const Registration &regn, const char *desc, int hp, int py): regNum(regn)
+Vehicle::Vehicle(const Registration &regn, const char *desc, int hp, int py)
 {
     setDescription(desc);
     setHorsePower(hp);
@@ -42,7 +45,8 @@ Vehicle::Vehicle(const Registration &regn, const char *desc, int hp, int py): re
 
 std::ostream& operator<<(std::ostream& os, const Vehicle& obj)
 {
-    os<<"Registration num:"<<obj.regNum<<" Description: "<<obj.description<<" Horsepowers: "<<obj.horsePowers
+    os<<"Registration num:"<<obj.regNum<<" Description: "<<(obj.description ? obj.description: "No description")<<
+    " Horsepowers: "<<obj.horsePowers
     <<" Production year: "<<obj.productionYear<<'\n';
     return os;
 }
@@ -62,12 +66,20 @@ std::strong_ordering Vehicle::operator<=>(const Vehicle& other) const
 
 void Vehicle::copyFrom(const Vehicle &other)
 {
+
     productionYear = other.productionYear;
     horsePowers = other.horsePowers;
 
-    description = new char[strlen(other.description) + 1];
-    strcpy(description, other.description);
-    regNum.setRegNum(DR);
+    if (other.description != nullptr)
+    {
+        description = new char[strlen(other.description) + 1];
+        strcpy(description, other.description);
+    }
+    else
+    {
+        description = nullptr;
+    }
+    regNum = other.regNum;
 }
 
 void Vehicle::moveFrom(Vehicle &&other)
@@ -82,7 +94,7 @@ void Vehicle::moveFrom(Vehicle &&other)
     other.description = nullptr;
 }
 
-Vehicle::Vehicle(const Vehicle &other)
+Vehicle::Vehicle(const Vehicle &other): regNum(other.regNum)
 {
     copyFrom(other);
 }

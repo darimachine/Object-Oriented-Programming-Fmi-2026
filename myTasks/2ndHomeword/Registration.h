@@ -1,7 +1,6 @@
 #pragma once
 #include  <compare>
-
-const  char* DR = "DEFAULT REGISTRATION";
+#include  <iostream>
 constexpr  int PLACE_MAX_LEN = 2;
 constexpr  int INTEGERS_LEN = 4;
 constexpr int SYMBOLS_LEN = 2;
@@ -17,13 +16,10 @@ class Registration
         bool isLetter( char) const;
 
 
-
     public:
         Registration() = delete;
         Registration(const char*);
         const char* getRegNumb() const;
-        void setRegNum(const char*);
-
         friend  std::ostream& operator<<(std::ostream&, const Registration&);
         std::strong_ordering operator<=>( const Registration&) const;
         friend bool operator==(const Registration&, const Registration&) ;

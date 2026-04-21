@@ -17,7 +17,7 @@ void VehicleList::resize(size_t NewCap)
     capacity = NewCap;
     Vehicle ** temp = new Vehicle*[capacity];
 
-    for (int i =0; i < vechileCount; i++)
+    for (int i =0; i < capacity; i++)
     {
         temp[i] = vechileLists[i];
     }
@@ -28,12 +28,12 @@ void VehicleList::resize(size_t NewCap)
 VehicleList &VehicleList::operator+=(const Vehicle& obj)
 {
     const Registration& joiningVReg = obj.getRegistration();
-    for (int i =0; i < vechileCount; i++)
+    for (int i =0; i < capacity; i++)
     {
-        const Registration& currReg = vechileLists[i]->getRegistration();
 
         if (vechileLists[i] != nullptr)
         {
+            const Registration& currReg = vechileLists[i]->getRegistration();
             if (currReg == joiningVReg)
             {
                 return *this;
@@ -46,11 +46,11 @@ VehicleList &VehicleList::operator+=(const Vehicle& obj)
         resize(capacity * 2);
     }
 
-    for (int i =0; i < vechileCount; i++)
+    for (int i =0; i < capacity; i++)
     {
         if (vechileLists[i] == nullptr)
         {
-            vechileLists[i] = new Vehicle(obj);
+            vechileLists[i] = new Vehicle(std::move(obj));
             vechileCount++;
             break;
         }
@@ -189,11 +189,7 @@ bool VehicleList::isFreeSlot(size_t pos) const
 
 bool VehicleList::isEmpty() const
 {
-    if (vechileLists)
-    {
-        return false;
-    }
-    return true;
+    return  vechileCount == 0;
 }
 
 int VehicleList::getCapacity() const

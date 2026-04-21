@@ -4,7 +4,6 @@
 
 constexpr  int REGS_PLACE_ONE_SYMB = 7;
 constexpr  int REGS_PLACE_TWO_SYMB = 8;
-
 bool Registration::isDigit(char symb) const
 {
     return symb >= '0' && symb <='9';
@@ -37,26 +36,13 @@ Registration::Registration(const char *inpStr)
         return;
     }
 
-    if (placeLen == 1)
-    {
-        for (int i =1; i < 5; i++)
-        {
-            if (!isDigit(inpStr[i]))
-            {
-                return;
-            }
-        }
-    }
-    else
-    {
-        for (int i =2; i < 6; i++)
-        {
-            if (!isDigit(inpStr[i]))
-            {
-                return;
-            }
-        }
-    }
+   for (int i = placeLen; i < INTEGERS_LEN; i ++)
+   {
+       if (!isDigit(inpStr[i]))
+       {
+           return;
+       }
+   }
     if (!isLetter(inpStr[len -1]) || !isLetter(inpStr[len -2]))
     {
         return;
@@ -89,14 +75,8 @@ std::strong_ordering Registration::operator<=>(const Registration& other) const
 
 }
 
-void Registration::setRegNum(const char *str)
-{
-    if (!str || strlen(str) > REG_NUM_MAX_LEN)
-    {
-        return;
-    }
-    strcpy(registrationNum, str);
-}
+
+
 
 int main()
 {
