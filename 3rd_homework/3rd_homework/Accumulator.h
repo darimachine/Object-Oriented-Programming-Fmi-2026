@@ -8,6 +8,6 @@ class Accumulator : public CarPart
 
 	public:
 		Accumulator(const std::string& inpMan, const std::string& inpDesc, unsigned inpCap, const std::string& inpBID);
-		void print(std::ostream& os) const override
+		void print(std::ostream& os) const override;
 };
 

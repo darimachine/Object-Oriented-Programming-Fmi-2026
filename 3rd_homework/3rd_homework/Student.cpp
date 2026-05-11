@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <print>
+#include "Animal.h"
 
 unsigned Student::ID = 1;
 
@@ -38,6 +39,8 @@ const std::string& Student::getName() const
 {
 	return name;
 }
+
+
 
 const int Student::getCourse() const
 {

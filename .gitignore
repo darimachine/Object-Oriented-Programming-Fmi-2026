@@ -13,6 +13,7 @@
 *.log
 *.ilk
 *.recipe
+*.ipch
 3rd_homework/.vs/3rd_homework/FileContentIndex/67e0c91e-1f92-4616-8657-5fdb158347d4.vsidx
 3rd_homework/.vs/3rd_homework/v17/ipch/AutoPCH/7a7f9fb0cef502db/TICKET.ipch
 3rd_homework/3rd_homework.sln
