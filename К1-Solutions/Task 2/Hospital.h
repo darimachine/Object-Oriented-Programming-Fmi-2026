@@ -17,6 +17,7 @@ public:
 	void removeWard(const string& name);
 
 	Ward& operator[](const string& name);
+	const Ward& operator[](const string& name) const;
 
 	vector<Ward> findPatientInWards(const string& egn) const;
 
