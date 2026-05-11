@@ -600,7 +600,9 @@ reinterpret_cast → ниско ниво, опасен
 
 ### Static Casting vs. Dynamic Casting — сравнение
 
-> **Снимка:** `images/static_vs_dynamic.png`
+
+![image](images/static_vs_dynamic.png)
+
 
 ```
 ┌──────────────────┬──────────────────────────────┬────────────────────────────────────┐
