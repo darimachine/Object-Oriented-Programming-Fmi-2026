@@ -1,0 +1,3 @@
+[event_announced] Концерт на Madonna в София!
+[ticket_sale] Билетите за Madonna са в продажба!
+[event_cancelled] Концертът на Coldplay е отменен.
