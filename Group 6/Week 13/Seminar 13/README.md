@@ -711,6 +711,8 @@ if (d) {
 
 ### `dynamic_pointer_cast` с `shared_ptr`
 
+> **`dynamic_pointer_cast`** — безопасен down-cast за `shared_ptr`. За разлика от `dynamic_cast` запазва **shared ownership** — reference count се увеличава. При провал връща празен `shared_ptr` (nullptr).
+
 ```cpp
 std::shared_ptr<Animal> a = std::make_shared<Dog>("Рекс");
 
@@ -722,10 +724,111 @@ if (d) {
     // a и d споделят ownership — reference count = 2
 }
 
-// При провал — d е nullptr, a е непроменен
+// При провал — d е nullptr, a е непроменен:
 std::shared_ptr<Cat> c = std::dynamic_pointer_cast<Cat>(a);
 if (!c) std::cout << "Не е Cat\n";
 ```
+
+### `dynamic_cast` vs `dynamic_pointer_cast` — разликата
+
+```
+dynamic_cast              → за сурови указатели и референции
+dynamic_pointer_cast      → за shared_ptr
+```
+
+```cpp
+class Animal { public: virtual ~Animal() = default; };
+class Dog : public Animal { public: void bark() const { std::cout << "Бау!\n"; } };
+
+// ── С суров указател → dynamic_cast ──────────────────────────
+Animal* raw = new Dog();
+
+Dog* d1 = dynamic_cast<Dog*>(raw);
+if (d1) d1->bark();   // ✅
+
+delete raw;
+
+// ── С unique_ptr → dynamic_cast + .get() ─────────────────────
+std::unique_ptr<Animal> uptr = std::make_unique<Dog>();
+
+Dog* d2 = dynamic_cast<Dog*>(uptr.get());   // .get() → суров указател
+if (d2) d2->bark();   // ✅
+// uptr пак притежава обекта — d2 е само "прозорец"
+
+// ── С shared_ptr → dynamic_pointer_cast ──────────────────────
+std::shared_ptr<Animal> sptr = std::make_shared<Dog>();
+
+std::shared_ptr<Dog> d3 = std::dynamic_pointer_cast<Dog>(sptr);
+if (d3) d3->bark();   // ✅
+// sptr и d3 споделят ownership — ref count = 2
+```
+
+### Сравнителна таблица
+
+```
+┌──────────────────────┬───────────────────────────┬──────────────────────────────┐
+│                      │ dynamic_cast              │ dynamic_pointer_cast         │
+├──────────────────────┼───────────────────────────┼──────────────────────────────┤
+│ Работи с             │ T*, T&                    │ shared_ptr<T>                │
+│ При провал (ptr)     │ nullptr                   │ празен shared_ptr (nullptr)  │
+│ При провал (ref)     │ хвърля std::bad_cast      │ N/A                          │
+│ Ownership            │ не се променя             │ споделя ownership (ref++)    │
+│ unique_ptr           │ .get() + dynamic_cast     │ не съществува                │
+│ Нужен virtual        │ Да                        │ Да                           │
+└──────────────────────┴───────────────────────────┴──────────────────────────────┘
+```
+
+### Пълен пример — полиморфна колекция с down-cast
+
+```cpp
+class Animal {
+public:
+    virtual std::string type() const = 0;
+    virtual ~Animal() = default;
+};
+
+class Dog : public Animal {
+    std::string name;
+public:
+    explicit Dog(const std::string& n) : name(n) {}
+    std::string type() const override { return "Куче"; }
+    void bark() const { std::cout << name << " казва: Бау!\n"; }
+};
+
+class Cat : public Animal {
+    std::string name;
+public:
+    explicit Cat(const std::string& n) : name(n) {}
+    std::string type() const override { return "Котка"; }
+    void purr() const { std::cout << name << " мърка\n"; }
+};
+
+int main() {
+    std::vector<std::shared_ptr<Animal>> animals;
+    animals.push_back(std::make_shared<Dog>("Рекс"));
+    animals.push_back(std::make_shared<Cat>("Мици"));
+    animals.push_back(std::make_shared<Dog>("Шаро"));
+
+    for (const auto& a : animals) {
+        // dynamic_pointer_cast — проверяваме конкретния тип:
+        if (auto dog = std::dynamic_pointer_cast<Dog>(a)) {
+            dog->bark();   // само кучетата лаят
+        }
+        else if (auto cat = std::dynamic_pointer_cast<Cat>(a)) {
+            cat->purr();   // само котките мърчат
+        }
+    }
+}
+```
+
+```
+Рекс казва: Бау!
+Мици мърка
+Шаро казва: Бау!
+```
+
+> **Важно:** Честото ползване на `dynamic_pointer_cast` сигнализира за лош дизайн — по-добре добави `virtual` метод в базовия клас.
+
 
 ### `dynamic_cast` изисква полиморфен тип
 
