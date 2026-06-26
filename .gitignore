@@ -1,2 +1,14 @@
 *.json
 *.exe
+*.vsidx
+homework 4/.vs/homework 4.slnx/v18/.suo
+*.db
+*.txt
+*.slnx
+*.tlog
+*.vcxproj
+*.filters
+*.user
+*.log
+*.idb
+*.pdb
