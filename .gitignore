@@ -1,2 +1,9 @@
 *.json
 *.exe
+*.vsidx
+*.ipch
+homework_4th/homework_4th/homework_4th.vcxproj
+homework_4th/.vs/homework_4th/v17/Browse.VC.db-wal
+homework_4th/.vs/homework_4th/v17/Browse.VC.db-shm
+homework_4th/.vs/homework_4th/v17/Browse.VC.db
+homework_4th/.vs/homework_4th/v17/Browse.VC.opendb

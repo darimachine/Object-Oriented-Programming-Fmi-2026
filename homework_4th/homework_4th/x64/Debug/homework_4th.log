@@ -1,0 +1,302 @@
+﻿  AdmissionResult.cpp
+  AdmissionService.cpp
+  Archivist.cpp
+  Cartographer.cpp
+  Discipline.cpp
+  Dungeon.cpp
+  ExpeditionLeader.cpp
+  FieldSurveyor.cpp
+  Landmark.cpp
+  MinCategoryDisciplinesRequirement.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2732,23): error C2039: 'parse': is not a member of 'std::formatter<std::__p2286::_Compile_time_parse_format_specs::_FormattedType,std::__p2286::_Compile_time_parse_format_specs::_CharT>'
+  (compiling source file 'Landmark.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_formatter.hpp(135,8):
+      see declaration of 'std::formatter<std::__p2286::_Compile_time_parse_format_specs::_FormattedType,std::__p2286::_Compile_time_parse_format_specs::_CharT>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(1075,39):
+      while evaluating constexpr function 'std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>::_On_replacement_field'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(1141,42):
+      while evaluating constexpr function 'std::_Parse_replacement_field'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2857,33):
+      while evaluating constexpr function 'std::_Parse_format_string'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2732,23):
+      the template instantiation context (the oldest one first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Landmark.cpp(14,13):
+          see reference to function template instantiation 'std::basic_format_string<char,const std::string &,const Coordinates &,const unsigned int &>::basic_format_string<char[38]>(const _Ty (&))' being compiled
+          with
+          [
+              _Ty=char [38]
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2857,89):
+          see reference to class template instantiation 'std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>' being compiled
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2745,5):
+          while compiling class template member function 'std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>::_Format_checker(std::basic_string_view<char,std::char_traits<char>>,const std::_Basic_format_arg_type *) noexcept'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2857,89):
+              see the first reference to 'std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>::_Format_checker' in 'Landmark::print'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2747,25):
+          see reference to function template instantiation 'std::_String_view_iterator<_Traits> std::__p2286::_Compile_time_parse_format_specs<Coordinates,std::basic_format_parse_context<char>>(_ParseContext &)' being compiled
+          with
+          [
+              _Traits=std::char_traits<char>,
+              _ParseContext=std::basic_format_parse_context<char>
+          ]
+  
+D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Landmark.cpp(14,13): error C3615: consteval function 'std::__p2286::_Compile_time_parse_format_specs' cannot result in a constant expression
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2721,35):
+      failure was caused by control reaching the end of a consteval function
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Landmark.cpp(14,13):
+      the call stack of the evaluation (the oldest call first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Landmark.cpp(14,13):
+          while evaluating function 'std::basic_format_string<char,const std::string &,const Coordinates &,const unsigned int &>::basic_format_string<char[38]>(const _Ty (&))'
+          with
+          [
+              _Ty=char [38]
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2857,33):
+          while evaluating function 'void std::_Parse_format_string<char,std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>>(std::basic_string_view<char,std::char_traits<char>>,_HandlerT &&)'
+          with
+          [
+              _HandlerT=std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(1141,42):
+          while evaluating function 'const _CharT *std::_Parse_replacement_field<char,_HandlerT&>(const _CharT *,const _CharT *,std::__p2286::_Format_checker<_CharT,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>&)'
+          with
+          [
+              _CharT=char,
+              _HandlerT=std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(1075,39):
+          while evaluating function 'void std::__p2286::_Format_checker<char,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,Coordinates,unsigned int>::_On_replacement_field(const size_t,const _CharT *)'
+          with
+          [
+              _CharT=char
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\format(2751,32):
+          while evaluating function 'std::_String_view_iterator<_Traits> std::__p2286::_Compile_time_parse_format_specs<Coordinates,std::basic_format_parse_context<char>>(_ParseContext &)'
+          with
+          [
+              _Traits=std::char_traits<char>,
+              _ParseContext=std::basic_format_parse_context<char>
+          ]
+  
+  minChoosenDisciplineCreditsRequirement.cpp
+  minCreditsRequirement.cpp
+  minGradeRequirement.cpp
+  RequirementFactory.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35): error C2661: 'takenDisciplinesRequirement::takenDisciplinesRequirement': no overloaded function takes 2 arguments
+  (compiling source file 'RequirementFactory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      while trying to match the argument list '(Category, unsigned int)'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      the template instantiation context (the oldest one first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\RequirementFactory.cpp(18,14):
+          see reference to function template instantiation 'std::unique_ptr<takenDisciplinesRequirement,std::default_delete<takenDisciplinesRequirement>> std::make_unique<takenDisciplinesRequirement,Category&,unsigned int&,0>(Category &,unsigned int &)' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32): error C2259: 'minChoosenDisciplineCreditsRequirement': cannot instantiate abstract class
+  (compiling source file 'RequirementFactory.cpp')
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\minChoosenDisciplineCreditsRequirement.h(7,7):
+      see declaration of 'minChoosenDisciplineCreditsRequirement'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      due to following members:
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      'std::unique_ptr<Requirement,std::default_delete<Requirement>> Requirement::clone(void) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(11,40):
+      see declaration of 'Requirement::clone'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      the template instantiation context (the oldest one first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\RequirementFactory.cpp(23,14):
+          see reference to function template instantiation 'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>> std::make_unique<minChoosenDisciplineCreditsRequirement,unsigned int&,0>(unsigned int &)' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35): error C2259: 'minChoosenDisciplineCreditsRequirement': cannot instantiate abstract class
+  (compiling source file 'RequirementFactory.cpp')
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\minChoosenDisciplineCreditsRequirement.h(7,7):
+      see declaration of 'minChoosenDisciplineCreditsRequirement'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      due to following members:
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      'std::unique_ptr<Requirement,std::default_delete<Requirement>> Requirement::clone(void) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(11,40):
+      see declaration of 'Requirement::clone'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27): error C2440: '<function-style-cast>': cannot convert from 'minChoosenDisciplineCreditsRequirement *' to 'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>'
+  (compiling source file 'RequirementFactory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27):
+      'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(const std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>> &)': cannot convert argument 1 from 'minChoosenDisciplineCreditsRequirement *' to 'const std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>> &'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+          Reason: cannot convert from 'minChoosenDisciplineCreditsRequirement *' to 'const std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3393,5):
+          could be 'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(std::unique_ptr<_Ux,_Dx> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3385,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3382,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(minChoosenDisciplineCreditsRequirement *,std::default_delete<minChoosenDisciplineCreditsRequirement> &&)'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3377,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(minChoosenDisciplineCreditsRequirement *,_Dx &&) noexcept'
+          with
+          [
+              _Dx=std::default_delete<minChoosenDisciplineCreditsRequirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3373,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(minChoosenDisciplineCreditsRequirement *,const _Dx &) noexcept'
+          with
+          [
+              _Dx=std::default_delete<minChoosenDisciplineCreditsRequirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3370,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(minChoosenDisciplineCreditsRequirement *) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3360,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(std::nullptr_t) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3357,5):
+          or       'std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>>::unique_ptr(void) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27):
+          while trying to match the argument list '(minChoosenDisciplineCreditsRequirement *)'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53): error C2672: 'forward': no matching overloaded function found
+  (compiling source file 'RequirementFactory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(1506,44):
+      could be '_Ty &&std::forward(remove_reference<_Ty>::type &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+          Failed to specialize function template '_Ty &&std::forward(remove_reference<_Ty>::type &&) noexcept'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+              With the following template arguments:
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+                  '_Ty=std::default_delete<minChoosenDisciplineCreditsRequirement>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits(1501,44):
+      or       '_Ty &&std::forward(remove_reference<_Ty>::type &) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+          Failed to specialize function template '_Ty &&std::forward(remove_reference<_Ty>::type &) noexcept'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+              With the following template arguments:
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+                  '_Ty=std::default_delete<minChoosenDisciplineCreditsRequirement>'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,53):
+      the template instantiation context (the oldest one first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\RequirementFactory.cpp(23,2):
+          see reference to function template instantiation 'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>,0>(std::unique_ptr<minChoosenDisciplineCreditsRequirement,std::default_delete<minChoosenDisciplineCreditsRequirement>> &&) noexcept' being compiled
+              D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\RequirementFactory.cpp(23,2):
+              see the first reference to 'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr' in 'RequirementFactory::createMinimumCreditsChoosenDisc'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18): error C2661: 'std::_Compressed_pair<_Dx,Requirement *,true>::_Compressed_pair': no overloaded function takes 2 arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18): error C2661:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18): error C2661:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18): error C2661:             _Dx=std::default_delete<Requirement>
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18): error C2661:         ]
+  (compiling source file 'RequirementFactory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1534,5):
+      could be 'std::_Compressed_pair<_Dx,Requirement *,true>::_Compressed_pair(std::_One_then_variadic_args_t,_Other1 &&,_Other2 ...) noexcept(<expr>)'
+          with
+          [
+              _Dx=std::default_delete<Requirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18):
+          Failed to specialize function template 'std::_Compressed_pair<_Dx,Requirement *,true>::_Compressed_pair(std::_One_then_variadic_args_t,_Other1 &&,_Other2 ...) noexcept(<expr>)'
+          with
+          [
+              _Dx=std::default_delete<Requirement>
+          ]
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18):
+              With the following template arguments:
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18):
+                  '_Other1=minChoosenDisciplineCreditsRequirement *'
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18):
+                  '_Other2={}'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1529,5):
+      or       'std::_Compressed_pair<_Dx,Requirement *,true>::_Compressed_pair(std::_Zero_then_variadic_args_t,_Other2 ...) noexcept(<expr>)'
+          with
+          [
+              _Dx=std::default_delete<Requirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,44):
+          'initializing': cannot convert from 'std::_One_then_variadic_args_t' to 'std::_Zero_then_variadic_args_t'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,44):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3394,18):
+      while trying to match the argument list '(std::_One_then_variadic_args_t, minChoosenDisciplineCreditsRequirement *)'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32): error C2259: 'Requirement': cannot instantiate abstract class
+  (compiling source file 'RequirementFactory.cpp')
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(7,7):
+      see declaration of 'Requirement'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      due to following members:
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      'std::optional<std::string> Requirement::check(const Student &) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(10,38):
+      see declaration of 'Requirement::check'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      'std::unique_ptr<Requirement,std::default_delete<Requirement>> Requirement::clone(void) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(11,40):
+      see declaration of 'Requirement::clone'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,32):
+      the template instantiation context (the oldest one first) is
+          D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\RequirementFactory.cpp(28,14):
+          see reference to function template instantiation 'std::unique_ptr<Requirement,std::default_delete<Requirement>> std::make_unique<Requirement,std::vector<std::string,std::allocator<std::string>>&,0>(std::vector<std::string,std::allocator<std::string>> &)' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35): error C2259: 'Requirement': cannot instantiate abstract class
+  (compiling source file 'RequirementFactory.cpp')
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(7,7):
+      see declaration of 'Requirement'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      due to following members:
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      'std::optional<std::string> Requirement::check(const Student &) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(10,38):
+      see declaration of 'Requirement::check'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      'std::unique_ptr<Requirement,std::default_delete<Requirement>> Requirement::clone(void) const': is abstract
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(11,40):
+      see declaration of 'Requirement::clone'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35): error C2665: 'Requirement::Requirement': no overloaded function could convert all the argument types
+  (compiling source file 'RequirementFactory.cpp')
+      D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\Requirement.h(13,1):
+      could be 'Requirement::Requirement(const Requirement &)'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+          'Requirement::Requirement(const Requirement &)': cannot convert argument 1 from 'std::vector<std::string,std::allocator<std::string>>' to 'const Requirement &'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+              Reason: cannot convert from 'std::vector<std::string,std::allocator<std::string>>' to 'const Requirement'
+              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+      while trying to match the argument list '(std::vector<std::string,std::allocator<std::string>>)'
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27): error C2440: '<function-style-cast>': cannot convert from 'Requirement *' to 'std::unique_ptr<Requirement,std::default_delete<Requirement>>'
+  (compiling source file 'RequirementFactory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27):
+      'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(const std::unique_ptr<Requirement,std::default_delete<Requirement>> &)': cannot convert argument 1 from 'Requirement *' to 'const std::unique_ptr<Requirement,std::default_delete<Requirement>> &'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,35):
+          Reason: cannot convert from 'Requirement *' to 'const std::unique_ptr<Requirement,std::default_delete<Requirement>>'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3393,5):
+          could be 'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(std::unique_ptr<_Ux,_Dx> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3385,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(std::unique_ptr<Requirement,std::default_delete<Requirement>> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3382,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(Requirement *,std::default_delete<Requirement> &&)'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3377,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(Requirement *,_Dx &&) noexcept'
+          with
+          [
+              _Dx=std::default_delete<Requirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3373,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(Requirement *,const _Dx &) noexcept'
+          with
+          [
+              _Dx=std::default_delete<Requirement>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3370,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(Requirement *) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3360,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(std::nullptr_t) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3357,5):
+          or       'std::unique_ptr<Requirement,std::default_delete<Requirement>>::unique_ptr(void) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,27):
+          while trying to match the argument list '(Requirement *)'
+  
+  Settlement.cpp
+  Student.cpp
+  StudentSystem.cpp
+  takenDisciplinesRequirement.cpp
+  test.cpp
+D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\test.cpp(15,2): error C2317: 'try' block starting on line '15' has no catch handlers
+  Generating Code...
+D:\github_projects\Object-Oriented-Programming-Fmi-2026\homework_4th\homework_4th\StudentSystem.cpp(29,1): warning C4715: 'StudentSystem::operator[]': not all control paths return a value
