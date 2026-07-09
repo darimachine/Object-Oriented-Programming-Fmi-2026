@@ -1,2 +1,7 @@
 *.json
 *.exe
+*.txt
+*.bin
+*.yaml
+cmake-build-debug/
+*.idea
